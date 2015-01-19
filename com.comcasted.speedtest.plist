@@ -6,16 +6,16 @@
 	<string>com.comcasted.speedtest</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Users/alp/workspace/comcasted/comcasted.sh</string>
-		<string>/Users/alp/Desktop/comcasted.csv</string>
-		<string>(:</string>
+		<string>$PWD/comcasted.sh</string>
+		<string>/Users/$USER/Desktop/comcasted.csv</string>
+		<string>$SSID</string>
 	</array>
 	<key>RunAtLoad</key>
-	<true/>
+	<false/>
 	<key>StandardErrorPath</key>
 	<string>/tmp/comcasted.log</string>
 	<key>StandardOutPath</key>
-	<string>/dev/null</string>
+	<string>/tmp/comcasted.log</string>
 	<key>StartInterval</key>
 	<integer>300</integer>
 </dict>
