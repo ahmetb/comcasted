@@ -39,7 +39,7 @@ if [ ! -f $CSV ]; then
 	echo "Creating CSV..."
 	echo "DATE,SSID,DOWNLOAD,UPLOAD,PING,SHARE" >> $CSV
 fi
-echo "`date +"%Y-%m-%d %H:%M:%S"`,\"${SSID_FILTER}\",$DOWNLOAD,$UPLOAD,$PING,\"$SHARE\"" >> $CSV
+echo "`date +"%Y-%m-%d %H:%M:%S"`,\"$SSID\",$DOWNLOAD,$UPLOAD,$PING,\"$SHARE\"" >> $CSV
 echo "Done."
 
 if [ -d "$tmpdir" ]; then

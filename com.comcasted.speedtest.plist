@@ -11,7 +11,7 @@
 		<string>$SSID</string>
 	</array>
 	<key>RunAtLoad</key>
-	<false/>
+	<true/>
 	<key>StandardErrorPath</key>
 	<string>/tmp/comcasted.log</string>
 	<key>StandardOutPath</key>
