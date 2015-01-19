@@ -12,7 +12,7 @@ SSID_FILTER=$2
 
 SSID=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}')
 if  [ -z "$SSID" ]; then
-	echo >&2 "Not connected to a wireless network."
+	echo >&2 "Not connected to a wireless network. Skipping."
 	exit 1
 fi
 
@@ -28,17 +28,18 @@ curl -sSL -o $tmpdir/speedtest https://raw.github.com/sivel/speedtest-cli/master
 chmod +x $tmpdir/speedtest
 echo "Running speedtest..."
 
-TEST_RESULT=`$tmpdir/speedtest --simple`
+TEST_RESULT=`$tmpdir/speedtest --simple --share`
 DOWNLOAD=`echo "$TEST_RESULT" | grep -i download | awk '{print $2}'`
 UPLOAD=`echo "$TEST_RESULT" | grep -i upload | awk '{print $2}'`
 PING=`echo "$TEST_RESULT" | grep -i ping | awk '{print $2}'`
+SHARE=`echo "$TEST_RESULT" | grep -i share | awk '{print $3}'`
 
-echo "Test results: Download=$DOWNLOAD Mbps, Upload=$UPLOAD Mbps, PING=$PING ms."
+echo "Test results: Download=$DOWNLOAD Mbps, Upload=$UPLOAD Mbps, PING=$PING ms $SHARE."
 if [ ! -f $CSV ]; then
 	echo "Creating CSV..."
-	echo "DATE,SSID,DOWNLOAD,UPLOAD,PING" >> $CSV
+	echo "DATE,SSID,DOWNLOAD,UPLOAD,PING,SHARE" >> $CSV
 fi
-echo "`date +"%Y-%m-%d %H:%M:%S"`,\"${SSID_FILTER}\",$DOWNLOAD,$UPLOAD,$PING" >> $CSV
+echo "`date +"%Y-%m-%d %H:%M:%S"`,\"${SSID_FILTER}\",$DOWNLOAD,$UPLOAD,$PING,\"$SHARE\"" >> $CSV
 echo "Done."
 
 if [ -d "$tmpdir" ]; then
