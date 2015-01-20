@@ -26,7 +26,10 @@ Once installed, the speed test script will be ran every 5 minutes and place a
 
 ## Visualizing
 
-[[TODO]]
+Currently there is no visualization code. (feel free to contribute!)
+
+Here's what I do: I upload the CSV to somewhere then give [charted.io](http://www.charted.co)
+that and get a nice visualization back. Any other ideas are welcomed.
 
 ## Tweaking
 
