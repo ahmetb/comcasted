@@ -35,7 +35,7 @@ PING=`echo "$TEST_RESULT" | grep -i ping | awk '{print $2}'`
 SHARE=`echo "$TEST_RESULT" | grep -i share | awk '{print $3}'`
 
 echo "Test results: Download=$DOWNLOAD Mbps, Upload=$UPLOAD Mbps, PING=$PING ms $SHARE."
-if [ ! -f $CSV ]; then
+if [[ ! -z "`stat $CSV 2>&1 >/dev/null`" ]]; then
 	echo "Creating CSV..."
 	echo "DATE,SSID,DOWNLOAD,UPLOAD,PING,SHARE" >> $CSV
 fi
