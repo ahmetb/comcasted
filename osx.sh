@@ -6,7 +6,7 @@ Usage: $0 <command> [<ssid>]
 
 Arguments:
 <command>	'install' or 'uninstall' to set up the program to run in the background
-<ssid>		(optional) run speed test only when running on this wireless network
+<ssid>		(optional) run speed test only when connected to this wireless network
 
 Examples:
   \$ $0 install "ahmet-home-wifi"

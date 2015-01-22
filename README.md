@@ -22,7 +22,7 @@ test results.
 
 	Arguments:
 	<command>	'install' or 'uninstall' to set up the program to run in the background
-	<ssid>		(optional) run speed test only when running on this wireless network
+	<ssid>		(optional) run speed test only when connected to this wireless network
 
 	Examples:
 	  $ ./osx.sh install ahmet-home-wifi
