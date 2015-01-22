@@ -64,13 +64,12 @@ def visualize(csv_path, days_back):
     gist_url, raw_url = _upload_to_gist(new_csv)
     print 'CSV uploaded to {0}'.format(gist_url)
     chart_url = _chart_url(raw_url)
-    print 'Showing chat at {0}'.format(chart_url)
     print 'Opening web browser...'
     if webbrowser.open(chart_url):
     	print 'Link opened in web browser.'
     	return True
     else:
-    	print 'Cannot launch web browser'
+    	print 'Cannot launch web browser. Try to navigate here: {0}'.format(chart_url)
     	return False
 
 def _launch_in_browser(url):
