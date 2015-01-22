@@ -49,9 +49,9 @@ SHARE=`echo "$TEST_RESULT" | grep -i share | awk '{print $3}'`
 log "Test results: Download=$DOWNLOAD Mbps, Upload=$UPLOAD Mbps, PING=$PING ms $SHARE."
 if [[ ! -z "`stat $CSV 2>&1 >/dev/null`" ]]; then
 	log "Creating CSV..."
-	log "DATE,SSID,DOWNLOAD,UPLOAD,PING,SHARE" >> $CSV
+	echo "DATE,SSID,DOWNLOAD,UPLOAD,PING,SHARE" >> $CSV
 fi
-log "`date +"%Y-%m-%d %H:%M:%S"`,\"$SSID\",$DOWNLOAD,$UPLOAD,$PING,\"$SHARE\"" >> $CSV
+echo "`date +"%Y-%m-%d %H:%M:%S"`,\"$SSID\",$DOWNLOAD,$UPLOAD,$PING,\"$SHARE\"" >> $CSV
 log "Done."
 
 if [ -d "$tmpdir" ]; then
