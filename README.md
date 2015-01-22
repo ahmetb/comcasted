@@ -31,10 +31,15 @@ test results.
 
 ## Visualizing
 
-Currently there is no visualization code. (feel free to contribute!)
+You can use the nice `./visualize.py` script to upload the CSV file to
+[charted.io](http://www.charted.co) and get a visualization like this:
 
-Here's what I do: I upload the CSV to somewhere then give [charted.io](http://www.charted.co)
-that and get a nice visualization back. Any other ideas are welcomed.
+(If you already installed using osx.sh script, it will find where the
+data is located automatically)
+
+    ./visualize.py 4
+
+![](http://cl.ly/image/1w0D392e1Q1I/Image%202015-01-21%20at%2011.36.39%20PM.png)
 
 ## Tweaking
 
