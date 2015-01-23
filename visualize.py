@@ -35,8 +35,8 @@ def main():
     if len(argv) < 2:
         print usage.format(argv[0])
         exit(1)
-    days_back = int(argv[1])
-    if days_back < 1:
+    days_back = float(argv[1])
+    if days_back <= 0:
         print "Invalid days-back argument"
         exit(1)
 
