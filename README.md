@@ -3,9 +3,11 @@
 Sometimes Comcast is too fast, you feel a need to measure your speed and save to a CSV
 so you can prove you are getting the speed you are paying for.
 
-This script is designed of OS X and periodically runs a speed test when you are
+This script is designed for OS X and periodically runs a speed test when you are
 are connected to a wireless network (or a specific wireless network). It is also
-not Comcast-specific but I decided to name it so because they're such a great ISP.
+not Comcast-specific but I decided to name it so because they're such a great ISP and
+they're a big supporter of [Net Neutrality](https://www.youtube.com/watch?v=fpbOEoRrHyU)
+movement.
 
 ## Installation
 
