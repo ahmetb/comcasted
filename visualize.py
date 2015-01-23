@@ -112,8 +112,10 @@ def _create_csv(data):
 
 
 def _filter_csv(csv_path, days_back):
-    cut_date = datetime.now() - timedelta(days=days_back)
     data = []
+    cut_date = datetime.now() - timedelta(days=days_back)
+
+    max_gap = timedelta(0, 10 * 60,0) # 10 minutes
     with open(csv_path, 'rb') as csv_file:
         r = csv.reader(csv_file, delimiter=CSV_DELIM, quotechar=CSV_QUOTE)
         for row in r:
@@ -123,6 +125,12 @@ def _filter_csv(csv_path, days_back):
             date = datetime.fromtimestamp(
                 mktime(strptime(date_str, "%Y-%m-%d %H:%M:%S")))
             if date >= cut_date:
+            	while len(data) > 0 and date-data[-1][0] > max_gap:
+            		# Zero fill in between with zero data points every max_gap/2
+            		fill_date = data[-1][0] + max_gap/2
+            		data.append((fill_date, 0, 0))
+
+            	# add data point
                 data.append((date, download, upload))
     return data
 
