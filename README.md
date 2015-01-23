@@ -53,4 +53,4 @@ it can run over the nights while you're sleeping as well.
 
 ## Author
 
-[Ahmet Alp Balkan](http://ahmetalpbalkan.com)
+[Ahmet Alp Balkan](http://ahmetalpbalkan.com) ([@ahmetalpbalkan](https://twitter.com/ahmetalpbalkan))
