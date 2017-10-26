@@ -36,7 +36,7 @@ fi
 log "Connected to wireless network '$SSID'."
 # Download speedtest-cli
 tmpdir=`mktemp -d 2>/dev/null || mktemp -d -t 'speedtest'`
-curl -sSL -o $tmpdir/speedtest https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py
+curl -sSL -o $tmpdir/speedtest https://raw.github.com/sivel/speedtest-cli/master/speedtest.py
 chmod +x $tmpdir/speedtest
 log "Running speedtest..."
 
